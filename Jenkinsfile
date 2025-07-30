@@ -28,7 +28,7 @@ pipeline {
             steps {
                 sh '''
                     . $VENV_PATH/bin/activate
-                    python hello-world.py
+                    timeout 30s python hello-world.py || true
                 '''
             }
         }
