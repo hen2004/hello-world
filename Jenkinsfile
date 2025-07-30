@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone from GitHub') {
-            steps {
-                git 'https://github.com/hen2004/hello-world'
-            }
-        }
-
         stage('Location') {
             steps {
                 sh 'pwd'
