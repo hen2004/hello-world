@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3.10'
+        }
+    }
 
     stages {
         stage('Location') {
@@ -11,13 +15,13 @@ pipeline {
 
         stage('Install Flask') {
             steps {
-                sh 'pip3 install flask'
+                sh 'pip install flask'
             }
         }
 
         stage('Run Python File') {
             steps {
-                sh 'python3 hello-world.py'
+                sh 'python hello-world.py'
             }
         }
     }
