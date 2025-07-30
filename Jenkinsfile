@@ -11,13 +11,13 @@ pipeline {
 
         stage('Install Flask') {
             steps {
-                sh 'pip install flask'
+                sh 'pip3 install flask'
             }
         }
 
         stage('Run Python File') {
             steps {
-                sh 'python hello-world.py'
+                sh 'python3 hello-world.py'
             }
         }
     }
